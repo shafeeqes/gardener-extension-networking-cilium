@@ -546,3 +546,5 @@ global:
     certgen: "image-repository:image-tag"
 
     kube-proxy: "image-repository:image-tag"
+  
+  checksumConfigMap: '{{ include (print $.Template.BasePath "/charts/config/templates/configmap.yaml") . | sha256sum }}'
